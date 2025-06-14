@@ -1,0 +1,12 @@
+theme = "Monokai Remastered"
+background = "#000000"
+cursor-color = "#b3b3b4"
+
+gtk-adwaita = true
+adw-toolbar-style = flat
+gtk-tabs-location = bottom
+
+window-decoration = client
+window-theme = ghostty
+window-padding-y = 8, 2
+window-padding-x = 4
