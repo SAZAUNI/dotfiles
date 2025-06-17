@@ -66,11 +66,10 @@ map("n", "<C-Down>", ":resize -3<CR>")-- Control+Down resizes horizontal split -
 --map("n", "<leader>e", ":25Lex<CR>")-- space+e toggles netrw tree view 
 
 -- Open nvim tree
-map("n", "<leader>e", ":NvimTreeFindFileToggle<CR>")-- space+e toggles nvim tree view
+map("n", "<leader>e", ":NvimTreeFindFileToggle<CR>")-- space+e toggloes nvim tree view
 
 -- Visual Maps
 map("v", "<leader>r", "\"hy:%s/<C-r>h//g<left><left>")-- Replace all instances of highlighted words 
-map("v", "<C-s>", ":sort<CR>")-- Sort highlighted text in visual mode with Control+S
 
 -- Copy to clipboard
 map("x", "<C-c>", "\"+y")
@@ -86,7 +85,7 @@ map("n", "<C-u>", "<C-u>zz", { noremap = true })
 map("n", "<S-ScrollWheelUp>", "5zh", { noremap = true })
 map("n", "<S-ScrollWheelDown>", "5zl", { noremap = true })
 
--- with keys
+-- Move cursor horizontally
 map("n", "<C-h>", "5zh", { noremap = true })
 map("n", "<C-l>", "5zl", { noremap = true })
 

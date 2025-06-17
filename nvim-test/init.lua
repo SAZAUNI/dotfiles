@@ -1,10 +1,27 @@
 local vim = vim
-local Plug = vim.fn['plug#']
+local Plug = vim.fn["plug#"]
 
-vim.call('plug#begin')
+-- Plugins calls
+vim.call("plug#begin")
 
--- LSP and completion
-Plug("neoclide/coc.nvim", {branch = "release"})
+-- LSP
+Plug("neovim/nvim-lspconfig") -- LSP configuration
+Plug("williamboman/mason.nvim") -- LSP installer
+Plug("williamboman/mason-lspconfig.nvim") -- Mason LSP config bridge
+Plug("nvim-telescope/telescope-ui-select.nvim") -- Telescope UI select
+Plug("nvimtools/none-ls.nvim")
+
+-- Completions
+Plug("hrsh7th/nvim-cmp") -- Completion engine
+Plug("hrsh7th/cmp-nvim-lsp") -- LSP completion source
+Plug("hrsh7th/cmp-path") -- Path completion source
+
+-- Snippets
+Plug("L3MON4D3/LuaSnip")
+Plug("saadparwaiz1/cmp_luasnip")
+Plug("rafamadriz/friendly-snippets")
+
+-- Syntax highlighting
 Plug("nvim-treesitter/nvim-treesitter")
 
 -- IDE enhancements
@@ -16,7 +33,7 @@ Plug("github/copilot.vim")
 Plug("nvim-lua/plenary.nvim")
 Plug("CopilotC-Nvim/CopilotChat.nvim")
 
--- Search and file management
+-- File management
 Plug("nvim-telescope/telescope.nvim")
 Plug("nvim-tree/nvim-tree.lua")
 
@@ -33,17 +50,25 @@ Plug("navarasu/onedark.nvim")
 Plug("bluz71/vim-moonfly-colors", { as = "moonfly" })
 Plug("catppuccin/nvim", { as = "catppuccin" })
 
-vim.call('plug#end')
+vim.call("plug#end")
 
--- Basics configurations
+
+
+-- Base configurations
 require("config/config")
 
-require("gitsigns").setup()
+-- No config's needed for these plugins
 require("autoclose").setup()
 require("nvim-surround").setup()
-require("colorizer").setup {}
+require("colorizer").setup()
 
-require("plugins/treesitter")
-require("plugins/nvim-tree")
-require("plugins/copilotchat")
-require("plugins/telescope")
+-- Load plugin's configs
+require("plugins/treesitter") -- Treesitter configuration
+require("plugins/completions") -- Completion engine and sources
+require("plugins/lspconfig") -- LSP configuration
+require("plugins/mason") -- LSP installer and config bridge
+require("plugins/none-ls") -- LSP for formatting and diagnostics
+require("plugins/copilotchat") -- Copilot chat integration
+require("plugins/gitsigns") -- Git integrations
+require("plugins/nvim-tree") -- File explorer
+require("plugins/telescope") -- Fuzzy finder
