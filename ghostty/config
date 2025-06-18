@@ -1,6 +1,7 @@
-theme = "Monokai Remastered"
+theme = "Builtin Pastel Dark"
+font-family = "Hack Nerd Font"
+cursor-invert-fg-bg = true
 background = "#000000"
-cursor-color = "#b3b3b4"
 
 gtk-adwaita = true
 adw-toolbar-style = flat
@@ -10,3 +11,5 @@ window-decoration = client
 window-theme = ghostty
 window-padding-y = 8, 2
 window-padding-x = 4
+
+keybind = f5=reload_config
