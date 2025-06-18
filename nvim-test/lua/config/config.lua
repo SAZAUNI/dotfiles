@@ -56,14 +56,11 @@ map("n", "<Tab>", ":bnext<CR>")
 map("n", "<S-Tab>", ":bprevious<CR>")
 map("n", "<leader>d", ":bd! <CR>")-- Space+d delets current buffer
 
--- adjust split sizes easier
+-- Adjust split sizes easier
 map("n", "<C-Left>", ":vertical resize +3<CR>")-- Control+Left resizes vertical split +
 map("n", "<C-Right>", ":vertical resize -3<CR>")-- Control+Right resizes vertical split -
 map("n", "<C-Up>", ":resize +3<CR>")-- Control+Up resizes horizontal split +
 map("n", "<C-Down>", ":resize -3<CR>")-- Control+Down resizes horizontal split -
-
--- Open netrw in 25% split in tree view
---map("n", "<leader>e", ":25Lex<CR>")-- space+e toggles netrw tree view 
 
 -- Open nvim tree
 map("n", "<leader>e", ":NvimTreeFindFileToggle<CR>")-- space+e toggloes nvim tree view

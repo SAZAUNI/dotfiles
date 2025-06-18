@@ -44,6 +44,7 @@ Plug("lewis6991/gitsigns.nvim")
 -- UI enhancements
 Plug("nvim-tree/nvim-web-devicons")
 Plug("norcalli/nvim-colorizer.lua")
+Plug("MeanderingProgrammer/render-markdown.nvim")
 
 -- Themes
 Plug("navarasu/onedark.nvim")
@@ -63,12 +64,13 @@ require("nvim-surround").setup()
 require("colorizer").setup()
 
 -- Load plugin's configs
-require("plugins/treesitter") -- Treesitter configuration
 require("plugins/completions") -- Completion engine and sources
+require("plugins/copilotchat") -- Copilot chat integration
+require("plugins/gitsigns") -- Git integrations
 require("plugins/lspconfig") -- LSP configuration
 require("plugins/mason") -- LSP installer and config bridge
 require("plugins/none-ls") -- LSP for formatting and diagnostics
-require("plugins/copilotchat") -- Copilot chat integration
-require("plugins/gitsigns") -- Git integrations
 require("plugins/nvim-tree") -- File explorer
+require("plugins/render-markdown") -- Markdown rendering
 require("plugins/telescope") -- Fuzzy finder
+require("plugins/treesitter") -- Treesitter configuration

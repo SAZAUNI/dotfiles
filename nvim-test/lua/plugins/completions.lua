@@ -27,6 +27,7 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
+		{ name = "render_markdown" },
 	},
 })
 
