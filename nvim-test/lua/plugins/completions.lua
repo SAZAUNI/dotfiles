@@ -4,8 +4,8 @@ require("luasnip.loaders.from_vscode")
 
 cmp.setup({
 	snippet = {
-		expand = function (args)
-			require('luasnip').lsp_expand(args.body)
+		expand = function(args)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
 	window = {
@@ -30,4 +30,3 @@ cmp.setup({
 		{ name = "render_markdown" },
 	},
 })
-

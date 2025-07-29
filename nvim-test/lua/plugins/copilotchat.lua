@@ -1,50 +1,53 @@
-require("CopilotChat").setup({
+local chat = require("CopilotChat")
+
+chat.setup({
 	window = {
-		layout = 'vertical',
+		layout = "vertical",
 		width = 0.25,
 		height = 0.25,
 	},
-	references_display = 'virtual',
+	highlight_headers = false,
+	references_display = "virtual",
 	clear_chat_on_new_prompt = false,
 	chat_autocomplete = true,
-	history_path = vim.fn.stdpath('data') .. '/copilotchat_history',
+	history_path = vim.fn.stdpath("data") .. "/copilotchat_history",
 
 	-- UI design
-	question_header = '  User  ',
-	answer_header = '  Copilot  ',
-	error_header = '  Error  ',
-	separator = '────────────────',
+	question_header = "###   User ",
+	answer_header = "###   Copilot ",
+	error_header = "###   Error ",
+	separator = "────────────────",
 
 	-- Mappings for Copilot Chat
 	mappings = {
 		complete = {
-			insert = '<CR>',
+			insert = "<CR>",
 		},
 		close = {
-			normal = 'q',
-			insert = '<None>',
+			normal = "q",
+			insert = "<None>",
 		},
 		reset = {
-			normal = '<C-l>',
-			insert = '<C-l>',
+			normal = "<C-l>",
+			insert = "<C-l>",
 		},
 		submit_prompt = {
-			normal = '<CR>',
-			insert = '<C-s>',
+			normal = "<CR>",
+			insert = "<C-s>",
 		},
 		accept_diff = {
-			normal = '<C-CR>',
-			insert = '<C-CR>',
+			normal = "<S-CR>",
+			insert = "<S-CR>",
 		},
 	},
 })
 
 -- Do Ctrl-C as ESC inside Copilot Chat
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "copilot-chat",
-  callback = function()
-    vim.keymap.set('i', '<C-c>', '<Esc>', { buffer = true })
-  end,
+	pattern = "copilot-chat",
+	callback = function()
+		vim.keymap.set("i", "<C-c>", "<Esc>", { buffer = true })
+	end,
 })
 
 -- Key mappings to open Copilot Chat

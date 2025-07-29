@@ -1,7 +1,7 @@
 local vim = vim
 local Plug = vim.fn["plug#"]
 
--- Plugins calls
+----------------------Plugins calls--------------------------------------------
 vim.call("plug#begin")
 
 -- LSP
@@ -29,13 +29,15 @@ Plug("m4xshen/autoclose.nvim")
 Plug("kylechui/nvim-surround")
 
 -- AI assistant
-Plug("github/copilot.vim")
-Plug("nvim-lua/plenary.nvim")
-Plug("CopilotC-Nvim/CopilotChat.nvim")
+Plug('yetone/avante.nvim')
+Plug("MunifTanjim/nui.nvim") --Dependency
+--Plug("github/copilot.vim")
+Plug("nvim-lua/plenary.nvim") --Dependency
+--Plug("CopilotC-Nvim/CopilotChat.nvim")
 
 -- File management
 Plug("nvim-telescope/telescope.nvim")
-Plug("nvim-tree/nvim-tree.lua")
+--Plug("nvim-tree/nvim-tree.lua")
 
 -- Git integration
 Plug("tpope/vim-fugitive")
@@ -51,12 +53,20 @@ Plug("navarasu/onedark.nvim")
 Plug("bluz71/vim-moonfly-colors", { as = "moonfly" })
 Plug("catppuccin/nvim", { as = "catppuccin" })
 
-vim.call("plug#end")
+-- Snacks nvim
+Plug("folke/snacks.nvim")
 
+-- Browser integration
+Plug("glacambre/firenvim")
+
+vim.call("plug#end")
+--------------------------------------------------------------------------------
 
 
 -- Base configurations
-require("config/config")
+require("config/opts")
+require("config/keymaps")
+require("config/commands")
 
 -- No config's needed for these plugins
 require("autoclose").setup()
@@ -64,13 +74,17 @@ require("nvim-surround").setup()
 require("colorizer").setup()
 
 -- Load plugin's configs
+require("plugins/snacks") -- Snacks plugin
 require("plugins/completions") -- Completion engine and sources
-require("plugins/copilotchat") -- Copilot chat integration
+--require("plugins/copilotchat") -- Copilot chat integration
 require("plugins/gitsigns") -- Git integrations
 require("plugins/lspconfig") -- LSP configuration
 require("plugins/mason") -- LSP installer and config bridge
 require("plugins/none-ls") -- LSP for formatting and diagnostics
-require("plugins/nvim-tree") -- File explorer
+--require("plugins/nvim-tree") -- File explorer
 require("plugins/render-markdown") -- Markdown rendering
-require("plugins/telescope") -- Fuzzy finder
+--require("plugins/telescope") -- Fuzzy finder
 require("plugins/treesitter") -- Treesitter configuration
+require("plugins/firenvim") -- Browser integration
+require("plugins/avante") -- Browser integration
+

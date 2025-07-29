@@ -7,4 +7,4 @@ null_ls.setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>fg", vim.lsp.buf.format, { desc = "Format Document" })
+vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format Document" })
