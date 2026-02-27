@@ -1,3 +1,6 @@
+-- TODO: lograr que al hacer ENTER me ponga en modo "normal"
+-- 		+ parece algo molesto hacer ctrl+c 2 veces para pasar de selector de sugerencias a "normal mode"
+
 local cmp = require("cmp")
 
 require("luasnip.loaders.from_vscode")
@@ -9,8 +12,14 @@ cmp.setup({
 		end,
 	},
 	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered({
+		  border = "rounded",
+		  winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat",
+		}),
+		documentation = cmp.config.window.bordered({
+		  border = "rounded",
+		  winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat",
+		}),
 	},
 	mapping = {
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),

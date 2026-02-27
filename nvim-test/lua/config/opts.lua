@@ -14,9 +14,9 @@ vim.opt.ignorecase = true-- enable case insensitive searching
 vim.opt.smartcase = true-- all searches are case insensitive unless there's a capital letter
 vim.opt.hlsearch = true-- disable all highlighted search results
 vim.opt.incsearch = true-- enable incremental searching
-vim.opt.wrap = false-- enable text wrapping
-vim.opt.tabstop = 4-- tabs=4spaces
-vim.opt.shiftwidth = 4
+vim.opt.wrap = false -- enable text wrapping
+vim.opt.tabstop = 4 -- tabs=4spaces
+vim.opt.shiftwidth = 2
 vim.opt.fileencoding = "utf-8"-- encoding set to utf-8
 vim.opt.pumheight = 20-- number of items in popup menu
 vim.opt.laststatus = 3-- always show statusline
@@ -32,12 +32,14 @@ vim.opt.completeopt= { "menuone", "noselect" }
 vim.opt.splitbelow = true-- split go below
 vim.opt.splitright = true-- vertical split to the right
 vim.opt.termguicolors = true-- enable 24-bit RGB colors in terminal
-vim.cmd('colorscheme moonfly')-- set colorscheme to moonfly
+vim.cmd('colorscheme github_dark_default')
 vim.cmd [[
 set path+=**
-highlight Normal       guibg=NONE ctermbg=NONE
-highlight NormalFloat  guibg=NONE ctermbg=NONE
-highlight FloatBorder  guibg=NONE ctermbg=NONE
 filetype plugin on
 set wildmenu
 ]]
+vim.opt.fixendofline = false
+vim.opt.fileformat=unix
+vim.o.winborder = "rounded"
+vim.opt.fillchars:append({ eob = '~' })
+vim.opt.swapfile = false

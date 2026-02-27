@@ -19,7 +19,13 @@ require("mason-lspconfig").setup({
 		"bashls",
 		"dockerls",
 		"gopls",
-		"rust_analyzer"
+		"rust_analyzer",
+		"jdtls",
 	},
 	automatic_installation = true
+})
+
+require("mason-nvim-dap").setup({
+  ensure_installed = { "codelldb" },
+  handlers = {}
 })
