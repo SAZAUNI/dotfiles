@@ -1,0 +1,133 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "sixel",
+    "source": "~/Pictures/Logos/audi-rally-90degrees.jpeg",
+    "height": 16,
+    "padding": {
+      "top": 4,
+      "left": 3,
+      "right": 3
+    }
+  },
+	"display": {
+			"separator": ": ",
+			"color": {
+					"title": "inverse_yellow"
+			}
+	},
+  "modules": [
+		{
+		  "type": "title",
+			"keyColor": "yellow"
+		},
+		"break",
+    "separator",
+    {
+      "type": "os",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "host",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "kernel",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "uptime",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "packages",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "shell",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "display",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "de",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "wm",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "wmtheme",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "theme",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "icons",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "font",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "cursor",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "terminal",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "terminalfont",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "cpu",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "gpu",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "memory",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "swap",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "disk",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "localip",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "battery",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "poweradapter",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "locale",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "break",
+      "keyColor": "yellow"
+    },
+		"colors"
+  ]
+}
+

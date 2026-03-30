@@ -1,0 +1,184 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 15,
+  "spacing": 0,
+  "modules-left": [
+    "sway/workspaces",
+  	"sway/window",
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "bluetooth",
+    "group/group-audio",
+    "group/group-backlight",
+	"custom/power_consumption",
+    "battery",
+    "tray",
+    "custom/power",
+  ],
+  "group/group-audio": {
+	"orientation": "inherit",
+	"drawer": {
+	  "transition-duration": 500
+	},
+	"modules": [
+	  "pulseaudio",
+	"pulseaudio/slider"
+	]
+  },
+  "group/group-backlight": {
+	"orientation": "inherit",
+	"drawer": {
+	  "transition-duration": 500
+	},
+	"modules": [
+	  "backlight",
+	"backlight/slider"
+	]
+  },
+  "pulseaudio/slider": {
+	"min": 0,
+	"max": 100,
+	"orientation": "horizontal"
+  },
+  "backlight/slider": {
+	"min": 0,
+	"max": 100,
+	"orientation": "horizontal"
+  },
+  "sway/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons":{
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		"6": "6",
+		"7": "7",
+		"8": "8",
+		"9": "9",
+		"10": "💻"
+	}
+  },
+  "sway/window": {
+	"format": "{}",
+	"all-outputs": true,
+	"max-length": 50
+  },
+  "custom/power": {
+    "format": "  ",
+    "on-click": "exec ~/.config/sway/scripts/power_menu.sh",
+    "tooltip": true,
+    "tooltip-format": "Power menu"
+  },
+  "network": {
+    "format-wifi": " 󰤨 {essid} ",
+    "format-ethernet": " Wired ",
+    "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
+    "format-linked": " 󱘖 {ifname} (No IP) ",
+    "format-disconnected": "  Disconnected ",
+    "format-alt": " 󰤨 {signalStrength}% ",
+    "interval": 1
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "  {icon} {capacity}% [{power:.2f}W] ",
+    "format-charging": " 󱐋{capacity}% [{power:.1f}W]",
+	  "interval": 1,
+    "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
+    "tooltip": true,
+	"on-click": "tlpui"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}% ",
+    "format-muted": " 󰖁 0% ",
+    "format-icons": {
+      "headphone": "  ",
+      "hands-free": "  ",
+      "headset": "  ",
+      "phone": "  ",
+      "portable": "  ",
+      "car": "  ",
+      "default": [
+        "  ",
+        "  ",
+        "  "
+      ]
+    },
+    "on-click-right": "pavucontrol -t 3",
+    "on-click": "pactl -- set-sink-mute 0 toggle",
+    "tooltip": true,
+  },
+  "memory": {
+	"interval": 5,
+	"format": "  {used} GiB",
+	"on-click": "footclient -T waybar_htop -e btop", 
+	"states": {
+	  "warning": 70,
+	  "critical": 90
+	}
+  },
+  "cpu": {
+  	"interval": 5,
+  	"format": "{usage:>3}%",
+  	"states": {
+  		"warning": 70,
+  		"critical": 90,
+  	},
+  	"on-click": "footclient -T waybar_htop -e btop"
+  },
+  "clock": {
+	"format": "{:%A %d %b | %H:%M}",
+	"format-alt": "󰅐 {:%OI:%M %p}",
+	"tooltip-format": " {:%A %m/%d}\n\n<tt><small>{calendar}</small></tt>",
+	"calendar": {
+		"on-scroll": 1,
+		"format": {
+			"months":     "<span color='#ffead3'><b>{}</b></span>",
+			"days":       "<span color='#ecc6d9'><b>{}</b></span>",
+			"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+			"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+			"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+		},
+	},
+	"actions": {
+		"on-scroll-up": "shift_up",
+		"on-scroll-down": "shift_down"
+	},
+  },
+  "tray": {
+    "icon-size": 17,
+    "spacing": 6
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}% ",
+    "tooltip": false,
+    "format-icons": [
+      " 󰃞 ",
+      " 󰃝 ",
+      " 󰃟 ",
+      " 󰃠 " 
+    ]
+  },
+  "bluetooth": {
+    "format": "  {status} ",
+    "format-connected": "  {device_alias} ",
+    "format-connected-battery": "  {device_alias}{device_battery_percentage}% ",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+	"on-click": "footclient -e bluetuith"
+  }
+}
+

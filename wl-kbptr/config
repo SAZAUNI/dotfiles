@@ -1,0 +1,10 @@
+[mode_tile]
+label_color=#dfe9e088
+label_select_color=#cde7cfcc
+unselectable_bg_color=#17201633
+selectable_bg_color=#1f2a1f88
+selectable_border_color=#2a3a2a66
+label_font_family=sans-serif
+label_font_size=8 50% 100
+label_symbols=abcdefghijklmnopqrstuvwxyz
+
